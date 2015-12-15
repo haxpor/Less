@@ -45,11 +45,6 @@
 		
 </header><!-- #masthead .site-header -->
 
-<div class="container">
-
-	<div id="primary">
-		<div id="content" role="main">
-
 
 <?php
 	/*-----------------------------------------------------------------------------------*/
@@ -59,37 +54,25 @@
 	if( is_home() || is_archive() ) {
 	
 ?>
+
+<div class="containerHome">
+
+	<div id="primary">
+		<div id="content" role="main">
 			<?php if ( have_posts() ) : ?>
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
 					<article class="post">
-					
-						<h1 class="title">
-							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+						<?php $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
+						<div class="postfeatureimagehome" style="background-image:url(
+						<?php echo "'".$feat_image."'";?>)">
+							<h1 class="title">
+								<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 								<?php the_title() ?>
-							</a>
-						</h1>
-						<div class="post-meta">
-							<?php if( comments_open() ) : ?>
-								<span class="comments-link">
-									<?php comments_popup_link( __( 'Comment', 'break' ), __( '1 Comment', 'break' ), __( '% Comments', 'break' ) ); ?>
-								</span>
-							<?php endif; ?>
-						
-						</div><!--/post-meta -->
-						
-						<div class="the-content">
-							<?php the_content( 'Continue...' ); ?>
-							
-							<?php wp_link_pages(); ?>
-						</div><!-- the-content -->
-						
-						<div class="meta clearfix">
-							<div class="category"><?php echo get_the_category_list(); ?></div>
-							<div class="tags"><?php echo get_the_tag_list( '| &nbsp;', '&nbsp;' ); ?></div>
-						</div><!-- Meta -->
-						
+								</a>
+							</h1>
+						</div>
 					</article>
 
 				<?php endwhile; ?>
@@ -109,7 +92,9 @@
 
 			<?php endif; ?>
 
-		
+			</div><!-- #content .site-content -->
+		</div><!-- #primary .content-area -->
+	</div><!-- / container-->
 	<?php } //end is_home(); ?>
 
 <?php
@@ -120,13 +105,18 @@
 	if( is_single() ) {
 ?>
 
+<div class="container">
 
+	<div id="primary">
+		<div id="content" role="main">
 			<?php if ( have_posts() ) : ?>
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
 					<article class="post">
-					
+						<div>
+							<img src=""
+						</div>
 						<h1 class="title"><?php the_title() ?></h1>
 						<div class="post-meta">
 							<?php if( comments_open() ) : ?>
@@ -167,6 +157,9 @@
 
 			<?php endif; ?>
 
+			</div><!-- #content .site-content -->
+		</div><!-- #primary .content-area -->
+	</div><!-- / container-->
 
 	<?php } //end is_single(); ?>
 	
@@ -177,7 +170,9 @@
 	
 	if( is_page()) {
 ?>
-
+<div class="container">
+	<div id="primary">
+		<div id="content" role="main">
 			<?php if ( have_posts() ) : ?>
 
 				<?php while ( have_posts() ) : the_post(); ?>
@@ -204,12 +199,11 @@
 
 			<?php endif; ?>
 
+			</div><!-- #content .site-content -->
+		</div><!-- #primary .content-area -->
+	</div><!-- / container-->
+
 	<?php } // end is_page(); ?>
-
-		</div><!-- #content .site-content -->
-	</div><!-- #primary .content-area -->
-
-</div><!-- / container-->
 
 <?php
 	/*-----------------------------------------------------------------------------------*/
