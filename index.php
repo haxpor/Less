@@ -8,6 +8,8 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
 <?php wp_head(); ?>
 
 </head>
@@ -56,25 +58,36 @@
 ?>
 
 <div class="containerHome">
-
+	<script>
+		$(function() {
+			$('body').on('mouseenter', '.thumbnaillink', function() {
+				$(this).parent().find('.dimmer-dark').addClass('hover');
+			});
+			$('body').on('mouseleave', '.thumbnaillink', function() {
+				$(this).parent().find('.dimmer-dark').removeClass('hover');
+			});
+		});
+	</script>
 	<div id="primary">
 		<div id="content" role="main">
 			<?php if ( have_posts() ) : ?>
 
+				<?php $topOffset = 0; ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 
 					<article class="post">
+						<h1 class="title">
 						<?php $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
-						<div class="postfeatureimagehome" style="background-image:url(
-						<?php echo "'".$feat_image."'";?>)">
-							<h1 class="title">
-								<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+						<div class="postfeatureimagehome" style="background-image:url(<?php echo "'".$feat_image."'";?>)">
+							<a class="thumbnaillink" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+								<div class="dimmer-dark" style="top: <?php echo $topOffset . "px";?>;"></div>
 								<?php the_title() ?>
-								</a>
-							</h1>
+							</a>
 						</div>
+						</h1>
 					</article>
 
+				<?php $topOffset += 360; ?>
 				<?php endwhile; ?>
 				
 				<!-- pagintation -->

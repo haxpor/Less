@@ -545,10 +545,12 @@ article .title {
 }
 article .title a {
   text-decoration: none;
-  color: #404040;
+  color: #aaaaaa;
+  font-size: 50px;
+  text-shadow: 2px 2px #444444;
 }
 article .title a:hover {
-  color: #007998;
+  color: #ffffff;
 }
 article .post-meta {
   margin-bottom: 40px;
@@ -702,6 +704,16 @@ html[xmlns] .clearfix {
 * html .clearfix {
   height: 1%;
 }
+.dimmer-dark {
+  background-color: rgba(25,25,25,0.75);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 360px;
+}
+.hover {
+  background-color:rgba(25,25,25,0.25);
+}
 /* Post
 -------------------------------------------------------------- */
 article .postfeatureimagehome {
@@ -709,12 +721,13 @@ article .postfeatureimagehome {
   margin-right: 0;
   margin-top: 0;
   margin-bottom: 0;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 150px;
+  padding-bottom: 150px;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  text-align: center;
 }
 article .postfeatureimage {
   padding-top: 120px;
