@@ -118,7 +118,7 @@
 	if( is_single() ) {
 ?>
 
-<div class="container">
+<div class="containerHome">
 
 	<div id="primary">
 		<div id="content" role="main">
@@ -127,26 +127,18 @@
 				<?php while ( have_posts() ) : the_post(); ?>
 
 					<article class="post">
-						<div>
-							<img src=""
-						</div>
-						<h1 class="title"><?php the_title() ?></h1>
-						<div class="post-meta">
-							<?php if( comments_open() ) : ?>
-								<span class="comments-link">
-									<?php comments_popup_link( __( 'Comment', 'less' ), __( '1 Comment', 'less' ), __( '% Comments', 'less' ) ); ?>
-								</span>
-							<?php endif; ?>
+						<?php $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
+						<div class="postfeatureimagehome" style="background-image:url(<?php echo "'".$feat_image."'";?>)"></div>
+						<h1 class="title entry-title"><?php the_title() ?></h1>
 						
-						</div><!--/post-meta -->
-						
-						<div class="the-content">
+						<div class="the-content regular-width">
 							<?php the_content( 'Continue...' ); ?>
 							
 							<?php wp_link_pages(); ?>
 						</div><!-- the-content -->
 						
-						<div class="meta clearfix">
+						<div class="meta regular-width">
+							<div><?php echo the_date(); ?></div></br>
 							<div class="category"><?php echo get_the_category_list(); ?></div>
 							<div class="tags"><?php echo get_the_tag_list( '| &nbsp;', '&nbsp;' ); ?></div>
 						</div><!-- Meta -->						
@@ -154,17 +146,11 @@
 					</article>
 
 				<?php endwhile; ?>
-				
-				<?php
-					// If comments are open or we have at least one comment, load up the comment template
-					if ( comments_open() || '0' != get_comments_number() )
-						comments_template( '', true );
-				?>
 
 
 			<?php else : ?>
 				
-				<article class="post error">
+				<article class="post error container regular-width">
 					<h1 class="404">Nothing posted yet</h1>
 				</article>
 
@@ -227,9 +213,8 @@
 <footer class="site-footer" role="contentinfo">
 	<div class="site-info container">
 		<?php do_action( 'break_credits' ); ?>
-		<a href="http://wordpress.org/" title="A Semantic Personal Publishing Platform" rel="generator">Proudly powered by WordPress</a>
-		<span class="sep"> and </span>
-		<a href="http://lessmade.com/themes/less" rel="theme">LESS</a> by <a href="http://jarederickson.com" rel="designer">Jared Erickson</a>
+		<h3>Connect with Me</h3><br/>
+		<a class="twitter-follow-button" href="https://twitter.com/haxpor" data-size="large" data-show-count="false">Follow @haxpor</a>
 	</div><!-- .site-info -->
 </footer><!-- #colophon .site-footer -->
 
