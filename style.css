@@ -538,8 +538,7 @@ article {
 article .title {
   color: #404040;
   line-height: 56.24px;
-  font-size: 38px;
-  font-size: 3.8rem;
+  font-size: 50px;
   font-weight: 700;
 }
 article .title a {
