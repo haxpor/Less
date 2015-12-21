@@ -536,10 +536,11 @@ article {
   padding: 0;
 }
 article .title {
-  color: #404040;
+  color: #ffffff;
   line-height: 56.24px;
   font-size: 50px;
   font-weight: 700;
+  text-shadow: 2px 2px #222222;
 }
 article .title a {
   text-decoration: none;
@@ -737,11 +738,13 @@ article .postfeatureimage {
 }
 
 article .entry-title {
+  color: #404040;
   padding-top: 3.3em;
   padding-bottom: 2.2em;
   max-width: 720px !important;
   text-align: center;
   margin: 0 auto;
+  text-shadow: 1px 1px #eeeeee;
 }
 
 article .regular-width {

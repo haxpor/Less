@@ -97,8 +97,8 @@
 						<div class="postfeatureimagehome" style="background-image:url(<?php echo "'".$feat_image."'";?>)">
 							<a class="thumbnaillink" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 								<div class="dimmer-dark" style="top: <?php echo $topOffset . "px";?>;"></div>
-								<?php the_title() ?>
 							</a>
+							<?php the_title() ?>
 						</div>
 						</h1>
 					</article>
