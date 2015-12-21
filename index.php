@@ -103,7 +103,7 @@
 						</h1>
 					</article>
 
-				<?php $topOffset += 360; ?>
+				<?php $topOffset += 356; ?>
 				<?php endwhile; ?>
 				
 				<!-- pagintation -->
