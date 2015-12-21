@@ -712,7 +712,7 @@ html[xmlns] .clearfix {
   position: absolute;
   left: 0;
   width: 100%;
-  height: 356px;
+  height: 300px;
 }
 .hover {
   background-color:rgba(25,25,25,0.05);
@@ -720,10 +720,6 @@ html[xmlns] .clearfix {
 /* Post
 -------------------------------------------------------------- */
 article .postfeatureimagehome {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  margin-bottom: 0;
   padding-top: 150px;
   padding-bottom: 150px;
   width: 100%;
@@ -757,6 +753,24 @@ article .regular-width {
 .error {
   text-align: center;
 }
+
+article .title-home-container {
+  position: absolute;
+  width: 100%;
+}
+
+article .title-home-container p {
+  -webkit-transform: translateY(-50%) translateX(-2.5%);
+  -moz-transform: translateY(-50%) translateX(-2.5%);
+  -ms-transform: translateY(-50%) translateX(-2.5%);
+  -o-transform: translateY(-50%) translateX(-2.5%);
+  transform: translateY(-50%) translateX(-2.5%);
+  top: 50%;
+  left: 50%;
+  z-index: 33;
+  text-shadow: 0 0.05em 0 rgba(0,0,0,0.5);
+}
+
 /* Media Queries for responsivenessssssss
 -------------------------------------------------------------- */
 @media (max-width: 767px) {
@@ -768,5 +782,11 @@ article .regular-width {
   }
   header hgroup {
     width: 100%;
+  }
+  article .title {
+    font-size: 30px;
+  }
+  article .title a {
+    font-size: 30px;
   }
 }

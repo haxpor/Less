@@ -94,16 +94,18 @@
 					<article class="post">
 						<h1 class="title">
 						<?php $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
-						<div class="postfeatureimagehome" style="background-image:url(<?php echo "'".$feat_image."'";?>)">
+						<div class="postfeatureimagehome" style="background-image:url(<?php echo "'".$feat_image."'";?>);">
 							<a class="thumbnaillink" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 								<div class="dimmer-dark" style="top: <?php echo $topOffset . "px";?>;"></div>
+								<div class="title-home-container">
+									<p><?php the_title() ?></p>
+								</div>
 							</a>
-							<?php the_title() ?>
 						</div>
 						</h1>
 					</article>
 
-				<?php $topOffset += 356; ?>
+				<?php $topOffset += 300; ?>
 				<?php endwhile; ?>
 				
 				<!-- pagintation -->
