@@ -602,14 +602,17 @@ article .meta .post-categories li {
 }
 /* Pagination */
 #pagination {
+  margin-top: 60px;
   margin-bottom: 40px;
   width: 100%;
 }
 #pagination .past-page {
   float: right;
+  margin-right: 15px;
 }
 #pagination .next-page {
   float: left;
+  margin-left: 15px;
 }
 /* Comments */
 h3#comments {
@@ -711,7 +714,7 @@ html[xmlns] .clearfix {
   height: 360px;
 }
 .hover {
-  background-color:rgba(25,25,25,0.25);
+  background-color:rgba(25,25,25,0.05);
 }
 /* Post
 -------------------------------------------------------------- */
